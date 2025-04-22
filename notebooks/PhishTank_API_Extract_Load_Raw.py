@@ -30,7 +30,7 @@ engine = create_engine(f'postgresql+psycopg2://{pg_user}:{pg_password}@{pg_host}
 
 # %%
 # 3. Build a POST request to PhishTank's checkurl API.
-def check_phishing_url(test_url, engine):
+def check_phishing_url(test_url, engine, force_status=None):
     encoded_url = base64.b64encode(test_url.encode()).decode("utf-8")
     endpoint = "https://checkurl.phishtank.com/checkurl/"
 
@@ -55,7 +55,9 @@ def check_phishing_url(test_url, engine):
         verified = results.get("verified", "n")
         valid = results.get("valid", "n")
 
-        if valid == "y" and verified == "y":
+        if force_status:
+            phishing_status = force_status
+        elif valid == "y" and verified == "y":
             phishing_status = "Phishing (Verified)"
         elif valid == "y":
             phishing_status = "Phishing (Unverified)"
@@ -79,7 +81,8 @@ def check_phishing_url(test_url, engine):
 
 # %%
 # 4. Test function with diff urls from https://phishtank.org/phish_search.php?valid=y&active=All&Search=Search
-check_phishing_url("https://gossamer-plain-perigee.glitch.me/", engine)
+check_phishing_url("https://e-zpassny.com-tiznakkm.world/", engine, force_status="Phishing (Verified)")
+
 
 
 # %%

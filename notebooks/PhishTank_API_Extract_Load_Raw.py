@@ -75,9 +75,9 @@ def check_phishing_url(test_url, engine, force_status=None):
         }])
 
         df.to_sql('phishtank_results', con=engine, schema='raw', if_exists='append', index=False)
-        print(f"✅ Added: {url} — {phishing_status}")
+        print(f" Added: {url} — {phishing_status}")
     else:
-        print("❌ Invalid or empty JSON response.")
+        print(" Invalid or empty JSON response.")
 
 # %%
 # 4. Test function with diff urls from https://phishtank.org/phish_search.php?valid=y&active=All&Search=Search

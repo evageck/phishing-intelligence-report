@@ -9,7 +9,7 @@
 
 
 # %%
-# 1.
+# 1. Import necessary libraries.
 import os
 import requests
 import pandas as pd
@@ -19,7 +19,7 @@ import base64
 
 # %%
 
-# 2.
+# 2. Load environment variables and create engine and load to raw schema
 load_dotenv()
 pg_user = os.environ['PG_USER']
 pg_password = os.environ['PG_PASSWORD']
@@ -29,7 +29,7 @@ pg_db = os.environ['PG_DB']
 engine = create_engine(f'postgresql+psycopg2://{pg_user}:{pg_password}@{pg_host}/{pg_db}')
 
 # %%
-# 3. 
+# 3. Build a POST request to PhishTank's checkurl API.
 def check_phishing_url(test_url, engine):
     encoded_url = base64.b64encode(test_url.encode()).decode("utf-8")
     endpoint = "https://checkurl.phishtank.com/checkurl/"
@@ -59,8 +59,11 @@ def check_phishing_url(test_url, engine):
             phishing_status = "Phishing (Verified)"
         elif valid == "y":
             phishing_status = "Phishing (Unverified)"
+        elif in_database == False:
+            phishing_status = "Unknown (Not in Database)"
         else:
             phishing_status = "Not Phishing"
+
 
         df = pd.DataFrame([{
             "url": url,
@@ -75,25 +78,8 @@ def check_phishing_url(test_url, engine):
         print("❌ Invalid or empty JSON response.")
 
 # %%
-# 4. 
-check_phishing_url("9068897	https://zimbra-portal.webflow.io/", engine)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 4. Test function with diff urls from https://phishtank.org/phish_search.php?valid=y&active=All&Search=Search
+check_phishing_url("http://geodgeon.com/.well-known/acme-challenge/login", engine)
 
 
 # %%

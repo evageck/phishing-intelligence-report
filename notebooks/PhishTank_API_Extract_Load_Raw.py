@@ -79,7 +79,7 @@ def check_phishing_url(test_url, engine):
 
 # %%
 # 4. Test function with diff urls from https://phishtank.org/phish_search.php?valid=y&active=All&Search=Search
-check_phishing_url("http://geodgeon.com/.well-known/acme-challenge/login", engine)
+check_phishing_url("https://gossamer-plain-perigee.glitch.me/", engine)
 
 
 # %%

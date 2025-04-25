@@ -26,9 +26,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
-        working-directory: notebooks
-        
+        run: pip install -r notebooks/requirements.txt
+
       - name: Run PhishTank API Extract/Load Script
         working-directory: notebooks
         run: python PhishTank_API_Extract_Load_Raw.py

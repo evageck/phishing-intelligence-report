@@ -27,8 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r ../requirements.txt
-        working-directory: notebooks
+          pip install -r requirements.txt
 
       - name: Run PhishTank API Extract/Load Script
         run: |

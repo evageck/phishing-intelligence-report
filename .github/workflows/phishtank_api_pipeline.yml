@@ -26,9 +26,9 @@ steps:
       python-version: '3.11'
 
   - name: Install python dependencies
-    working-directory: ${{github.workspace}}
-    run: pip install -r requirements.txt
-
+    run: pip install -r ../requirements.txt
+    working-directory: notebooks
+    
   - name: Run PhishTank API Extract/Load Script
     working-directory: notebooks
     run: python PhishTank_API_Extract_Load_Raw.py

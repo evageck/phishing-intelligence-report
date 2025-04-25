@@ -16,20 +16,20 @@ jobs:
     name: Run PhishTank API Script
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+  - name: Set up Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.11'
 
-      - name: Install python dependencies
-        working-directory: ${{ github.workspace }}
-        run: pip install -r requirements.txt        
+  - name: Install python dependencies
+    working-directory: ${{github.workspace}}
+    run: pip install -r requirements.txt
 
-      - name: Run PhishTank API Extract/Load Script
-        working-directory: notebooks
-        run: python PhishTank_API_Extract_Load_Raw.py
+  - name: Run PhishTank API Extract/Load Script
+    working-directory: notebooks
+    run: python PhishTank_API_Extract_Load_Raw.py
 

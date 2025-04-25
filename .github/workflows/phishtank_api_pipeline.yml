@@ -26,7 +26,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install python dependencies
-        run: pip install -r requirements.txt
+        working-directory: ${{ github.workspace }}
+        run: pip install -r requirements.txt        
 
       - name: Run PhishTank API Extract/Load Script
         working-directory: notebooks

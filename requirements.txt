@@ -3,3 +3,5 @@ pandas
 pymysql
 psycopg2-binary
 dotenv
+beautifulsoup4
+requests

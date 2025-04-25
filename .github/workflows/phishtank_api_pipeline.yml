@@ -2,8 +2,8 @@ name: Run PhishTank API Extract and Load to Raw
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:
+    - cron: '0 7 * * *'  # runs daily at 7:00 AM UTC (midnight PDT)
+  workflow_dispatch:     # allows manual trigger
 
 env:
   PG_USER: ${{ secrets.PG_USER }}
@@ -12,7 +12,7 @@ env:
   PG_DB: ${{ secrets.PG_DB }}
 
 jobs:
-  phishtank_api:
+  extract_load_raw:
     name: Run PhishTank API Script
     runs-on: ubuntu-latest
 
@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
@@ -29,5 +29,5 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run PhishTank API Extract/Load Script
-        run: |
-          python notebooks/PhishTank_API_Extract_Load_Raw.py
+        run: python notebooks/PhishTank_API_Extract_Load_Raw.py
+

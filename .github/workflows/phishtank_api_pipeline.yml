@@ -29,5 +29,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run PhishTank API Extract/Load Script
-        run: python notebooks/PhishTank_API_Extract_Load_Raw.py
+        working-directory: notebooks
+        run: python PhishTank_API_Extract_Load_Raw.py
 

@@ -1,0 +1,25 @@
+name: Run Hoxhunt Web Scrape Extract and Load to Raw
+
+on:
+  workflow_dispatch: # manual trigger only
+
+jobs:
+  extract_load_raw:
+    name: Run Hoxhunt Web Scrape Script
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Hoxhunt Web Scrape Extract/Load Script
+        working-directory: notebooks
+        run: python Hoxhunt_Web_Scrape_Extract_Load_Raw.py

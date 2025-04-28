@@ -1,6 +1,6 @@
 # %%
 
-name: Run PhishTank API Extract and Load to Raw
+name: Run PhishTank API Extract and Load to Raw (NEW)
 
 on:
   schedule:

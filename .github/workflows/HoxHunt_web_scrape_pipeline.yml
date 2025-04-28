@@ -1,7 +1,9 @@
 name: Run Hoxhunt Web Scrape Extract and Load to Raw
 
 on:
-  workflow_dispatch: # manual trigger only
+  schedule:
+    - cron: '0 8 1 2 *'  # every February 1st at 8:00 AM UTC
+  workflow_dispatch:     # still allow manual trigger if needed
 
 jobs:
   extract_load_raw:

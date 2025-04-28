@@ -22,6 +22,7 @@ jobs:
       - name: Install python dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Hoxhunt Web Scrape Extract/Load Script
+      - name: Run HoxHunt Web Scrape Extract/Load Script
         working-directory: notebooks
-        run: python Hoxhunt_Web_Scrape_Extract_Load_Raw.py
+        run: python HoxHunt_Web_Scrape_Extract_Load_Raw.py
+      

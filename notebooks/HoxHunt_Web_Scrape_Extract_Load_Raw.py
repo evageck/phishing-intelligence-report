@@ -120,3 +120,58 @@ if not df_impersonation.empty:
 else:
     print(" No impersonation data extracted.")
 # %%
+
+# 1. Industry Training Success
+industry_training_df = pd.DataFrame({
+    "industry": [
+        "Financial Services", "Government", "IT, software, internet",
+        "Legal, professional, business services", "Logistics, supply chain",
+        "Manufacturing, construction", "Oil & energy", "Pharma & healthcare",
+        "Retail", "Global Success rate"
+    ],
+    "month_0": [48, 55, 54, 49, 53, 48, 57, 52, 40, 47],
+    "month_6": [69, 68, 62, 61, 63, 64, 68, 60, 58, 63],
+    "month_12": [74, 70, 66, 64, 69, 67, 70, 62, 61, 67]
+})
+industry_training_df.to_sql("industry_training_success", con=engine, schema="raw", if_exists="replace", index=False)
+
+# %%
+
+# 2. Job Role Training Performance
+job_role_training_df = pd.DataFrame({
+    "department": [
+        "Legal", "Finance", "Information technology", "Customer relationship",
+        "Software engineering", "Human resources", "Business development",
+        "Marketing", "Information security", "Communications", "Sales", "Other"
+    ],
+    "success_rate_percent": [73, 72, 70, 68, 67, 66, 65, 65, 64, 63, 63, 67],
+    "miss_rate_percent": [25, 25, 28, 30, 31, 31, 32, 33, 32, 34, 34, 31],
+    "fail_rate_percent": [2.4, 2.4, 2.3, 2.9, 2.3, 2.8, 3.0, 2.7, 3.8, 3.2, 3.2, 2.8]
+})
+job_role_training_df.to_sql("job_role_training_performance", con=engine, schema="raw", if_exists="replace", index=False)
+
+# %%
+
+# 3. Simulated Attack Training Performance
+simulated_attack_df = pd.DataFrame({
+    "simulated_attack_number": [1, 6, 12, 14],
+    "success_percent": [34, 55, 74, 80],
+    "fail_percent": [11, 4.3, 2.3, 1.8],
+    "miss_percent": [55, 41, 24, 18]
+})
+simulated_attack_df.to_sql("simulated_attack_performance", con=engine, schema="raw", if_exists="replace", index=False)
+
+
+# %%
+
+# 4. Phishing Rate Over Time
+phishing_rate_df = pd.DataFrame({
+    "year": [2021, 2022, 2023, 2024],
+    "phishing_rate_per_reporter": [4.7, 6.0, 6.8, 7.0],
+    "percent_increase": [None, 28, 13, 3]
+})
+phishing_rate_df.to_sql("phishing_rate_over_time", con=engine, schema="raw", if_exists="replace", index=False)
+
+print("Uploaded 4 structured Hoxhunt tables to raw schema in PostgreSQL.")
+
+# %%

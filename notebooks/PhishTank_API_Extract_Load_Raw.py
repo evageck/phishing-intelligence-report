@@ -95,9 +95,9 @@ def check_phishing_url(test_url, engine, force_status=None):
         df_features.to_sql("dim_url_features", con=engine, schema='raw', if_exists='append', index=False)
         df_fact.to_sql("fact_phishing_urls", con=engine, schema='raw', if_exists='append', index=False)
 
-        print(f"✅ Added: {url} – {phishing_status}")
+        print(f"Added: {url} – {phishing_status}")
     else:
-        print("❌ Invalid or empty JSON response.")
+        print("Invalid or empty JSON response.")
 
 
 # %% 

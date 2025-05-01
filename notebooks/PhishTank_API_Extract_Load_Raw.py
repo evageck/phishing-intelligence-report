@@ -148,25 +148,9 @@ def check_multiple_phishing_urls(url_list, engine, force_status="Phishing (Verif
 
 # 5. Example input list
 urls_to_check = [
-    "https://cgvhbhjhnkghjnh.weebly.com/",
-    "https://changesvalue.weebly.com/",
-    "https://dowlakesnedufi.weebly.com/",
-    "https://dsfxgbfgnkjhgfd.weebly.com/",
-    "https://emailscurityactivation.weebly.com/",
-    "https://fasdrftgfvcdxzasdfv.weebly.com/",
-    "https://fwwxw.weebly.com/",
-    "https://golden1cureset.weebly.com/",
-    "https://hbgjbvjkkvg.weebly.com/",
-    "https://hgzssw.weebly.com/",
-    "https://incomeoptimum-user.weebly.com/",
-    "https://infoshawmember.weebly.com/",
-    "https://invitationnhomesss67.weebly.com/",
-    "https://allegrolokalnie.52671x-35y983.xyz",
-    "https://it-support-59c516.webflow.io/",
-    "https://kjkjfsjkfs9.weebly.com/",
-    "https://loginbellemaiill.weebly.com/",
-    "https://mwtinc233234.weebly.com/"
+
 ]
+
 
 # %%
 # 6. Run the batch

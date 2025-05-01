@@ -173,5 +173,3 @@ phishing_rate_df = pd.DataFrame({
 phishing_rate_df.to_sql("phishing_rate_over_time", con=engine, schema="raw", if_exists="replace", index=False)
 
 print("Uploaded 4 structured Hoxhunt tables to raw schema in PostgreSQL.")
-
-# %%

@@ -8,9 +8,9 @@
 - Looker Studio  
 
 ## Project Objective
-This project supports security teams by identifying common phishing URL patterns and uncovering departmental training gaps that leave organizations vulnerable.  
-It addresses the challenge of recognizing patterns in phishing attempts and pinpointing weak areas in training effectiveness.  
-Automated pipelines, SQL queries, and dashboard visualizations highlight key trends and guide targeted security interventions.
+- This project supports security teams by identifying common phishing URL patterns and uncovering departmental training gaps that leave organizations vulnerable.  
+- It addresses the challenge of recognizing patterns in phishing attempts and pinpointing weak areas in training effectiveness.  
+- Automated pipelines, SQL queries, and dashboard visualizations highlight key trends and guide targeted security interventions.
 
 ## Role-Specific Project Focus
 This project is aligned with the Associate Data Informatics Analyst role at **ServiceNow**, within the **Security Organization (SSO)**. The position emphasizes building analytics dashboards, querying structured data, and delivering insights to support security decision-making. My work simulates the core tasks in this job, including constructing automated workflows, analyzing patterns across departments and industries, and presenting visual findings.  

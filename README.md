@@ -28,4 +28,3 @@ This project is aligned with the Associate Data Informatics Analyst role at **Se
 
 ## Future Improvements
 - Use **dbt (Data Build Tool)** to create modular transformation layers with staging views and warehouse-ready fact and dimension tables.  
-- Extend visual reporting to include **time-based phishing trends** and **automated alert thresholds** for training failures.
